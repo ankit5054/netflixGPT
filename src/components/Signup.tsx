@@ -6,16 +6,17 @@ import { signUpValidate } from "../utils/validate";
 export default function Signup() {
   const email = useRef(null);
   const password = useRef(null);
+  const name = useRef(null);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSignUpOps = () => {
     let validateRes = signUpValidate(
       email?.current?.["value"],
-      password?.current?.["value"]
+      password?.current?.["value"],
+      name?.current?.["value"]
     );
     if (validateRes) setErrorMessage(validateRes);
     else setErrorMessage("");
-
   };
 
   return (
@@ -41,8 +42,13 @@ export default function Signup() {
               <input
                 type="text"
                 placeholder="Full name"
+                required
+                ref={name}
                 className=" py-3 px-4 w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm  focus:border-2 focus:border-white"
               />
+              <p className="text-red-500 -mt-4">
+                {errorMessage.search("Name") != -1 ? errorMessage : null}
+              </p>
               <input
                 ref={email}
                 type="email"
