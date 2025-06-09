@@ -1,7 +1,17 @@
 import { Link } from "react-router";
 import Header from "./Header";
+import { signInValidate } from "../utils/validate";
+import { useRef, useState } from "react";
 
 export default function Login() {
+  const email = useRef(null);
+  const password = useRef(null);
+  const [errorMessage, setErrorMessage] = useState("");
+  const handleSigninOps = () => {
+    let validateRes = signInValidate(email?.current?.["value"]);
+    if (validateRes) setErrorMessage(validateRes);
+    else setErrorMessage("");
+  };
   return (
     <div>
       <Header />
@@ -16,22 +26,43 @@ export default function Login() {
         <div className="flex h-screen justify-center items-center">
           <div className="w-3/12 mt-20  absolute opacity-80 bg-black p-10 space-y-10 rounded-md text-lg">
             <div className="text-white text-4xl font-bold ">Sign In</div>
-            <form className="  space-y-4">
+            <form
+              className="  space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
               <input
+                ref={email}
                 type="email"
                 placeholder="Email or mobile number"
+                required
                 className=" py-3 px-4 w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm  focus:border-2 focus:border-white"
               />
+              <p className="text-red-500 -mt-4">
+                {errorMessage.search("Email") != -1 ? errorMessage : null}
+              </p>
               <input
+                ref={password}
                 type="password"
                 placeholder="Password"
+                required
                 className="  py-3 px-4  w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm focus:border-2 focus:border-white"
               />
-              <button className="bg-red-600 px-4 py-2 w-full text-white font-bold rounded-sm hover:cursor-pointer">
+              <p>
+                {errorMessage.search("Password") != -1 ? errorMessage : null}
+              </p>
+              <button
+                className="bg-red-600 px-4 py-2 w-full text-white font-bold rounded-sm hover:cursor-pointer"
+                onClick={() => handleSigninOps()}
+              >
                 Sign In
               </button>
               <div className="text-white text-center">OR</div>
-              <button className="w-full bg-neutral-500 text-white  py-3 px-4 rounded-sm  hover:cursor-pointer">
+              <button
+                className="w-full bg-neutral-500 text-white  py-3 px-4 rounded-sm  hover:cursor-pointer"
+                onSubmit={(e) => e.preventDefault()}
+              >
                 Use a sign-in code
               </button>
               <div className="text-white underline text-center hover:cursor-pointer">
@@ -49,9 +80,9 @@ export default function Login() {
               <div className="text-white text-base">
                 New to Netflix?
                 <Link to="/signup">
-                <span className="hover:underline font-bold hover:cursor-pointer">
-                  Sign up now.
-                </span>
+                  <span className="hover:underline font-bold hover:cursor-pointer">
+                    Sign up now.
+                  </span>
                 </Link>
               </div>
               <div className="text-sm text-gray-300">

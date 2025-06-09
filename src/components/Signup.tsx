@@ -1,7 +1,23 @@
 import { Link } from "react-router";
 import Header from "./Header";
+import { useRef, useState } from "react";
+import { signUpValidate } from "../utils/validate";
 
 export default function Signup() {
+  const email = useRef(null);
+  const password = useRef(null);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSignUpOps = () => {
+    let validateRes = signUpValidate(
+      email?.current?.["value"],
+      password?.current?.["value"]
+    );
+    if (validateRes) setErrorMessage(validateRes);
+    else setErrorMessage("");
+
+  };
+
   return (
     <div>
       <Header />
@@ -16,31 +32,51 @@ export default function Signup() {
         <div className="flex h-screen justify-center items-center">
           <div className="w-3/12 mt-20  absolute opacity-80 bg-black p-10 space-y-10 rounded-md text-lg">
             <div className="text-white text-4xl font-bold ">Sign Up</div>
-            <form className="  space-y-4">
+            <form
+              className="  space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
               <input
                 type="text"
                 placeholder="Full name"
                 className=" py-3 px-4 w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm  focus:border-2 focus:border-white"
               />
               <input
+                ref={email}
                 type="email"
                 placeholder="Email or mobile number"
+                required
                 className=" py-3 px-4 w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm  focus:border-2 focus:border-white"
               />
+              <p className="text-red-500 -mt-4">
+                {errorMessage.search("Email") != -1 ? errorMessage : null}
+              </p>
               <input
+                ref={password}
                 type="password"
                 placeholder="Password"
+                required
                 className="  py-3 px-4  w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm focus:border-2 focus:border-white"
               />
-              <button className="bg-red-600 px-4 py-2 w-full text-white font-bold rounded-sm hover:cursor-pointer">
+              <p className="text-red-500 -mt-4">
+                {errorMessage.search("Password") != -1 ? errorMessage : null}
+              </p>
+              <button
+                className="bg-red-600 px-4 py-2 w-full text-white font-bold rounded-sm hover:cursor-pointer"
+                onClick={() => {
+                  handleSignUpOps();
+                }}
+              >
                 Sign Up
               </button>
-                            <div className="text-white text-base">
+              <div className="text-white text-base">
                 Already a member?
                 <Link to="/">
-                <span className="hover:underline font-bold hover:cursor-pointer">
-                  Sign in.
-                </span>
+                  <span className="hover:underline font-bold hover:cursor-pointer">
+                    Sign in.
+                  </span>
                 </Link>
               </div>
               <div className="text-sm text-gray-300">
@@ -48,7 +84,7 @@ export default function Signup() {
                 a bot.
               </div>
               <div className="text-sm text-blue-500 underline hover:cursor-pointer">
-Learn more.
+                Learn more.
               </div>
             </form>
           </div>
