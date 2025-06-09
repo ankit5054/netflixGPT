@@ -46,7 +46,7 @@ export default function Signup() {
                 ref={name}
                 className=" py-3 px-4 w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm  focus:border-2 focus:border-white"
               />
-              <p className="text-red-500 -mt-4">
+              <p className="text-red-500 -mt-4 text-sm">
                 {errorMessage.search("Name") != -1 ? errorMessage : null}
               </p>
               <input
@@ -56,7 +56,7 @@ export default function Signup() {
                 required
                 className=" py-3 px-4 w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm  focus:border-2 focus:border-white"
               />
-              <p className="text-red-500 -mt-4">
+              <p className="text-red-500 -mt-4 text-sm">
                 {errorMessage.search("Email") != -1 ? errorMessage : null}
               </p>
               <input
@@ -66,7 +66,7 @@ export default function Signup() {
                 required
                 className="  py-3 px-4  w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm focus:border-2 focus:border-white"
               />
-              <p className="text-red-500 -mt-4">
+              <p className="text-red-500 -mt-4 text-sm">
                 {errorMessage.search("Password") != -1 ? errorMessage : null}
               </p>
               <button
