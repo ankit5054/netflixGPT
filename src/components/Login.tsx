@@ -2,15 +2,24 @@ import { Link } from "react-router";
 import Header from "./Header";
 import { signInValidate } from "../utils/validate";
 import { useRef, useState } from "react";
+import { signInUser } from "../utils/sigin";
+import Spinner from "./helper/Spinner";
 
 export default function Login() {
   const email = useRef(null);
   const password = useRef(null);
   const [errorMessage, setErrorMessage] = useState("");
-  const handleSigninOps = () => {
+  const [loading, setLoading] = useState(false);
+  const handleSigninOps = async () => {
     let validateRes = signInValidate(email?.current?.["value"]);
     if (validateRes) setErrorMessage(validateRes);
-    else setErrorMessage("");
+    else {
+      setLoading(true);
+      setErrorMessage("");
+      await signInUser(email?.current?.["value"], password?.current?.["value"]);
+      setLoading(false);
+    }
+    return;
   };
   return (
     <div>
@@ -56,7 +65,11 @@ export default function Login() {
                 className="bg-red-600 px-4 py-2 w-full text-white font-bold rounded-sm hover:cursor-pointer"
                 onClick={() => handleSigninOps()}
               >
-                Sign In
+                {!loading ? (
+                  <div className="hover:cursor-pointer">Sign In</div>
+                ) : (
+                  <Spinner />
+                )}
               </button>
               <div className="text-white text-center">OR</div>
               <button

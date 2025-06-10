@@ -2,21 +2,36 @@ import { Link } from "react-router";
 import Header from "./Header";
 import { useRef, useState } from "react";
 import { signUpValidate } from "../utils/validate";
+import { signUpUser } from "../utils/sigin";
+import Spinner from "./helper/Spinner";
 
 export default function Signup() {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSignUpOps = () => {
+  const handleSignUpOps = async () => {
     let validateRes = signUpValidate(
       email?.current?.["value"],
       password?.current?.["value"],
       name?.current?.["value"]
     );
     if (validateRes) setErrorMessage(validateRes);
-    else setErrorMessage("");
+    else {
+      setErrorMessage("");
+      setLoading(true);
+      let signUpRes = await signUpUser(
+        name?.current?.["value"],
+        email?.current?.["value"],
+        password?.current?.["value"]
+      );
+      setLoading(false);
+      if (signUpRes?.status == "Error") {
+        setErrorMessage("Email already in use");
+      }
+    }
   };
 
   return (
@@ -70,13 +85,18 @@ export default function Signup() {
                 {errorMessage.search("Password") != -1 ? errorMessage : null}
               </p>
               <button
-                className="bg-red-600 px-4 py-2 w-full text-white font-bold rounded-sm hover:cursor-pointer"
+                className="bg-red-600 px-4 py-2 w-full text-white font-bold rounded-sm  flex items-center justify-center text-center"
                 onClick={() => {
                   handleSignUpOps();
                 }}
               >
-                Sign Up
+                {!loading ? (
+                  <div className="hover:cursor-pointer">Sign Up</div>
+                ) : (
+                  <Spinner />
+                )}
               </button>
+
               <div className="text-white text-base">
                 Already a member?
                 <Link to="/">
