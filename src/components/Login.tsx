@@ -16,8 +16,14 @@ export default function Login() {
     else {
       setLoading(true);
       setErrorMessage("");
-      await signInUser(email?.current?.["value"], password?.current?.["value"]);
+      let signInRes = await signInUser(
+        email?.current?.["value"],
+        password?.current?.["value"]
+      );
       setLoading(false);
+      if (signInRes.status === "Error") {
+        setErrorMessage("Invalid Credentials");
+      }
     }
     return;
   };
@@ -58,8 +64,8 @@ export default function Login() {
                 required
                 className="  py-3 px-4  w-full bg-transparent text-slate-200 placeholder-slate-200 border border-slate-200 rounded-sm focus:border-2 focus:border-white"
               />
-              <p>
-                {errorMessage.search("Password") != -1 ? errorMessage : null}
+              <p className="text-red-500 -mt-4 text-sm">
+                {errorMessage.search("Cred") != -1 ? errorMessage : null}
               </p>
               <button
                 className="bg-red-600 px-4 py-2 w-full text-white font-bold rounded-sm hover:cursor-pointer"

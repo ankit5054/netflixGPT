@@ -1,4 +1,7 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "../config/firebase";
 
 export async function signUpUser(name: any, email: any, password: any) {
@@ -23,20 +26,21 @@ export async function signInUser(email: any, password: any) {
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
-     console.log(user);
-     return {
-      status:"Success",
-      accessToken:user?.stsTokenManager?.accesstoken,
-      refreshToken:user?.stsTokenManager?.refreshToken,
-      expirationTime:user?.stsTokenManager.expirationTime
-     }
-     
+      console.log(user);
+      return {
+        status: "Success",
+        accessToken: (user as any)?.stsTokenManager?.accesstoken,
+        refreshToken: (user as any)?.stsTokenManager?.refreshToken,
+        expirationTime: (user as any)?.stsTokenManager.expirationTime,
+      };
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode);
+      // console.log(errorCode);
       console.log(errorMessage);
-      
+      return {
+        status: "Error",
+      };
     });
 }
