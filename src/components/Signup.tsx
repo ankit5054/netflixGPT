@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router";
 import Header from "./Header";
 import { useRef, useState } from "react";
 import { signUpValidate } from "../utils/validate";
-import { signUpUser } from "../utils/sigin";
+import { signUpUser } from "../utils/signin";
 import Spinner from "./helper/Spinner";
 import { addUser } from "../store/slice/user";
 import { useDispatch } from "react-redux";

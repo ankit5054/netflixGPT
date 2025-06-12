@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { addUser, removeUser } from "../store/slice/user";
-import { signOutUser } from "../utils/sigin";
+import { signOutUser } from "../utils/signin";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
 
@@ -25,7 +25,10 @@ const Header = () => {
           })
         );
         navigate("/browse");
-      } else navigate("/");
+      } else {
+        dispatchAction(removeUser());
+        navigate("/");
+      }
     });
   }, []);
 
@@ -82,9 +85,7 @@ const Header = () => {
 
                   <button
                     onClick={() => {
-                      dispatchAction(removeUser());
                       signOutUser();
-                      navigate("/");
                     }}
                     className="w-full text-left px-4 py-2 hover:cursor-pointer "
                   >
