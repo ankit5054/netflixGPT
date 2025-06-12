@@ -1,9 +1,11 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Header from "./Header";
 import { useRef, useState } from "react";
 import { signUpValidate } from "../utils/validate";
 import { signUpUser } from "../utils/sigin";
 import Spinner from "./helper/Spinner";
+import { addUser } from "../store/slice/user";
+import { useDispatch } from "react-redux";
 
 export default function Signup() {
   const email = useRef(null);
@@ -11,6 +13,8 @@ export default function Signup() {
   const name = useRef(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const dispatchAction = useDispatch();
 
   const handleSignUpOps = async () => {
     let validateRes = signUpValidate(
@@ -30,6 +34,9 @@ export default function Signup() {
       setLoading(false);
       if (signUpRes?.status == "Error") {
         setErrorMessage("Email already in use");
+      } else {
+        dispatchAction(addUser(signUpRes));
+        navigate("/browse");
       }
     }
   };

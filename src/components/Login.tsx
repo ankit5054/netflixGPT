@@ -1,15 +1,23 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Header from "./Header";
 import { signInValidate } from "../utils/validate";
 import { useRef, useState } from "react";
 import { signInUser } from "../utils/sigin";
 import Spinner from "./helper/Spinner";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, removeUser } from "../store/slice/user";
+import { onIdTokenChanged } from "firebase/auth";
+import { auth } from "../config/firebase";
 
 export default function Login() {
   const email = useRef(null);
   const password = useRef(null);
+  const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const dispatchAction = useDispatch();
+  // const userStore = useSelector((store)=>store?.user)
+
   const handleSigninOps = async () => {
     let validateRes = signInValidate(email?.current?.["value"]);
     if (validateRes) setErrorMessage(validateRes);
@@ -23,15 +31,20 @@ export default function Login() {
       setLoading(false);
       if (signInRes.status === "Error") {
         setErrorMessage("Invalid Credentials");
+      } else {
+        dispatchAction(addUser(signInRes));
+        navigate("/browse");
       }
     }
     return;
   };
+
   return (
+    // userStore.accessToken
     <div>
       <Header />
       <div className="">
-        <div className="absolute bg-black">
+        <div className="absolute bg-black  ">
           <img
             src="https://assets.nflxext.com/ffe/siteui/vlv3/6863f6e8-d419-414d-b5b9-7ef657e67ce4/web/IN-en-20250602-TRIFECTA-perspective_27a3fdfa-126f-4148-b153-55d60b51be6a_small.jpg"
             alt=""

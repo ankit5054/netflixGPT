@@ -1,10 +1,14 @@
+import { Provider } from "react-redux";
 import "./App.css";
 import Body from "./components/Body";
+import NetflixGPTStore from "./store/myStore";
 
 export function App() {
   return (
-    <div>
-      <Body />
-    </div>
+    <Provider store={NetflixGPTStore}>
+      <div>
+        <Body />
+      </div>
+    </Provider>
   );
 }

@@ -1,15 +1,27 @@
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  onIdTokenChanged,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../config/firebase";
-
+import { removeUser } from "../store/slice/user";
+import { useDispatch } from "react-redux";
 export async function signUpUser(name: any, email: any, password: any) {
   return await createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    .then(async (userCredential) => {
       const user = userCredential.user;
+      await updateProfile(user, {
+        displayName: name, // pass the name variable here
+      });
       return {
         status: "Success",
+        accessToken: (user as any)?.stsTokenManager?.accessToken,
+        refreshToken: (user as any)?.stsTokenManager?.refreshToken,
+        displayName: name,
+        email: (user as any)?.email,
+        uid: (user as any)?.uid,
       };
     })
     .catch((error) => {
@@ -26,21 +38,24 @@ export async function signInUser(email: any, password: any) {
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
-      console.log(user);
       return {
         status: "Success",
-        accessToken: (user as any)?.stsTokenManager?.accesstoken,
+        accessToken: (user as any)?.stsTokenManager?.accessToken,
         refreshToken: (user as any)?.stsTokenManager?.refreshToken,
-        expirationTime: (user as any)?.stsTokenManager.expirationTime,
+        displayName: (user as any)?.displayName,
+        email: (user as any)?.email,
+        uid: (user as any)?.uid,
       };
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // console.log(errorCode);
-      console.log(errorMessage);
+      // console.log(error);
       return {
         status: "Error",
       };
     });
 }
+
+
