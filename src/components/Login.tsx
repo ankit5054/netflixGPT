@@ -1,12 +1,12 @@
 import { Link, useNavigate } from "react-router";
 import Header from "./Header";
 import { signInValidate } from "../utils/validate";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { signInUser } from "../utils/sigin";
 import Spinner from "./helper/Spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../store/slice/user";
-import { onIdTokenChanged } from "firebase/auth";
+import { onAuthStateChanged, onIdTokenChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
 
 export default function Login() {
@@ -38,6 +38,7 @@ export default function Login() {
     }
     return;
   };
+
 
   return (
     // userStore.accessToken

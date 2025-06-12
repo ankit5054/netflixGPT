@@ -3,11 +3,11 @@ import {
   onAuthStateChanged,
   onIdTokenChanged,
   signInWithEmailAndPassword,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../config/firebase";
-import { removeUser } from "../store/slice/user";
-import { useDispatch } from "react-redux";
+
 export async function signUpUser(name: any, email: any, password: any) {
   return await createUserWithEmailAndPassword(auth, email, password)
     .then(async (userCredential) => {
@@ -58,4 +58,6 @@ export async function signInUser(email: any, password: any) {
     });
 }
 
-
+export async function signOutUser() {
+  return await signOut(auth).then().catch();
+}
