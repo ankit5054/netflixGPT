@@ -13,7 +13,7 @@ const Header = () => {
   const user = useSelector((store: any) => store.user);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         dispatchAction(
           addUser({
@@ -30,6 +30,8 @@ const Header = () => {
         navigate("/");
       }
     });
+
+    return () => unSubscribe();
   }, []);
 
   return (
