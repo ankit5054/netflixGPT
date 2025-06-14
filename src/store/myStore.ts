@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userSlice from "./slice/user";
+import userReducer from "./slice/user";
+import movieReducer from "./slice/movies";
 const NetflixGPTStore = configureStore({
   reducer: {
-    user:userSlice
+    user: userReducer,
+    movies: movieReducer,
   },
+  devTools:true  
 });
 
 export default NetflixGPTStore;
