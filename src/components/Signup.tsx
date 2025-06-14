@@ -53,7 +53,7 @@ export default function Signup() {
           />
         </div>
         <div className="flex h-screen justify-center items-center">
-          <div className="w-3/12 mt-20  absolute opacity-80 bg-black p-10 space-y-10 rounded-md text-lg">
+          <div className="lg:w-3/12 mt-20  absolute opacity-80 bg-black p-10 space-y-10 rounded-md text-lg">
             <div className="text-white text-4xl font-bold ">Sign Up</div>
             <form
               className="  space-y-4"

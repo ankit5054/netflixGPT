@@ -27,7 +27,9 @@ const Header = () => {
         navigate("/browse");
       } else {
         dispatchAction(removeUser());
-        navigate("/");
+        window.location.pathname == "/signup"
+          ? navigate("/signup")
+          : navigate("/");
       }
     });
 
