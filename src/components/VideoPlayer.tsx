@@ -9,7 +9,7 @@ const VideoPlayer = () => {
 
   let { original_title, overview, id } = movies[randomItem(20)];
   return (
-    <div>
+    <div className="">
       <VideoTitle title={original_title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>

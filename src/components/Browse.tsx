@@ -1,17 +1,15 @@
 import Header from "./Header";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import VideoPlayer from "./VideoPlayer";
-import MovieList from "./MovieList";
+import MovieLists from "./MovieLists";
 
 const Browse = () => {
   useNowPlayingMovies();
   return (
-    <div className="">
-      <div className="">
-        <Header />
-      </div>
+    <div className="w-screen">
+      <Header />
       <VideoPlayer />
-      <MovieList />
+      <MovieLists />
     </div>
   );
 };

@@ -37,14 +37,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex absolute w-full px-12 py-5 bg-gradient-to-b from-10%  from-black z-20 justify-between align-middle">
-      <div>
-        <img
-          src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-          alt=""
-          className="w-36"
-        />
-      </div>
+    <div className="flex absolute w-full sm:px-8 px-2 py-5 bg-gradient-to-b from-10%  from-black z-20 justify-between align-middle bg-[url(https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png)]">
       {user.accesstoken && (
         <div
           className="flex space-x-2 align-middle"
@@ -54,48 +47,24 @@ const Header = () => {
           <img
             src="https://occ-0-2483-3647.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTfUlmnFRKf_OEUhru2aqso39FKxONTd5Dt_sWnNj5wAg4bbMBZ8sgZupTfnB9IQ8tmWcrzRiyZsCp1bLKb_n7VrnTw3_Ovw7Q.png?r=bd7"
             alt=""
-            className="w-12 h-12"
-          />
-          <img
-            src="https://www.svgrepo.com/show/108052/arrow-down-filled-triangle.svg"
-            alt=""
-            className={`w-3 text-white ${
-              showMenu ? "rotate-180" : ""
-            }  duration-500`}
+            className="md:w-12 md:h-12 sm:w-8 sm:h-8 w-6 h-6"
           />
           {showMenu && (
             <div
-              className="relative inline-block text-left  "
+              className="relative inline-block  "
               onMouseEnter={() => setShowMenu(true)}
               onMouseLeave={() => setShowMenu(false)}
             >
               {/* Dropdown Menu */}
-              <div className="absolute right-0 mt-12 w-48 rounded-md  z-50 bg-black  text-white opacity-80">
-                <div className="py-1 text-sm ">
-                  <a
-                    href="/profile"
-                    className="block px-4 py-2 hover:cursor-pointer "
-                  >
-                    Profile
-                  </a>
-                  {/* <hr className="border border-amber-50" /> */}
-                  <a
-                    href="/settings"
-                    className="block px-4 py-2 hover:cursor-pointer"
-                  >
-                    Settings
-                  </a>
-                  {/* <hr className="border border-amber-50" /> */}
-
-                  <button
-                    onClick={() => {
-                      signOutUser();
-                    }}
-                    className="w-full text-left px-4 py-2 hover:cursor-pointer "
-                  >
-                    Sign Out
-                  </button>
-                </div>
+              <div className="absolute mt-5 text-sm w-2/12  rounded-md  z-50 bg-black  text-white opacity-80">
+                <button
+                  onClick={() => {
+                    signOutUser();
+                  }}
+                  className="w-screen text-left px-4 py-2 hover:cursor-pointer "
+                >
+                  Sign Out
+                </button>
               </div>
             </div>
           )}

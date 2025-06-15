@@ -6,7 +6,7 @@ import NetflixGPTStore from "./store/myStore";
 export function App() {
   return (
     <Provider store={NetflixGPTStore}>
-      <div>
+      <div className=" overflow-x-hidden">
         <Body />
       </div>
     </Provider>

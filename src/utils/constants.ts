@@ -6,3 +6,4 @@ export const TMDB_API_OPTIONS = {
   },
 };
 
+export const TMDB_IMG_CDN="https://image.tmdb.org/t/p/original/"
