@@ -37,7 +37,14 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex absolute w-full sm:px-8 px-2 py-5 bg-gradient-to-b from-10%  from-black z-20 justify-between align-middle bg-[url(https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png)]">
+    <div className="flex absolute w-full sm:px-8 px-2 py-5 bg-gradient-to-b from-10%  from-black z-20 justify-between align-middle ]">
+      <div className="">
+        <img
+          src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+          alt=""
+          className="md:w-36 sm:w-28 w-28"
+        />
+      </div>
       {user.accesstoken && (
         <div
           className="flex space-x-2 align-middle"

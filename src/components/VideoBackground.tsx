@@ -15,6 +15,7 @@ interface VideoResult {
 const VideoBackground = ({ movieId }: VideoBackGroundProps) => {
   const [videoResponse, setVideoResponse] = useState<VideoResult[]>([]);
   useVideoBackGround(setVideoResponse, movieId);
+  // console.log("videoResponse", movieId, videoResponse);
 
   return (
     <div>
