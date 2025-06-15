@@ -39,22 +39,13 @@ export default function Login() {
     return;
   };
 
-
   return (
     // userStore.accessToken
     <div>
-      
       <Header />
-      <div className="bg-[url(https://assets.nflxext.com/ffe/siteui/vlv3/6863f6e8-d419-414d-b5b9-7ef657e67ce4/web/IN-en-20250602-TRIFECTA-perspective_27a3fdfa-126f-4148-b153-55d60b51be6a_small.jpg)]" >
-        {/* <div className="absolute bg-black  ">
-          <img
-            src="https://assets.nflxext.com/ffe/siteui/vlv3/6863f6e8-d419-414d-b5b9-7ef657e67ce4/web/IN-en-20250602-TRIFECTA-perspective_27a3fdfa-126f-4148-b153-55d60b51be6a_small.jpg"
-            alt=""
-            className="opacity-55 object-cover"
-          />
-        </div> */}
+      <div className="bg-[url(https://assets.nflxext.com/ffe/siteui/vlv3/6863f6e8-d419-414d-b5b9-7ef657e67ce4/web/IN-en-20250602-TRIFECTA-perspective_27a3fdfa-126f-4148-b153-55d60b51be6a_small.jpg)]">
         <div className="flex h-screen justify-center items-center">
-          <div className=" mt-20  absolute opacity-80 bg-black p-10 space-y-10 rounded-md text-lg">
+          <div className="lg:w-3/12  mt-20  absolute opacity-80 bg-black p-10 space-y-10 rounded-md text-lg mb-10">
             <div className="text-white text-4xl font-bold ">Sign In</div>
             <form
               className="  space-y-4"

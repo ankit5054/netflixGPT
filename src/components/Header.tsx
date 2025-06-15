@@ -47,32 +47,26 @@ const Header = () => {
       </div>
       {user.accesstoken && (
         <div
-          className="flex space-x-2 align-middle"
+          className="relative flex items-center"
           onMouseEnter={() => setShowMenu(true)}
           onMouseLeave={() => setShowMenu(false)}
         >
+          {/* Avatar */}
           <img
             src="https://occ-0-2483-3647.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTfUlmnFRKf_OEUhru2aqso39FKxONTd5Dt_sWnNj5wAg4bbMBZ8sgZupTfnB9IQ8tmWcrzRiyZsCp1bLKb_n7VrnTw3_Ovw7Q.png?r=bd7"
-            alt=""
-            className="md:w-12 md:h-12 sm:w-8 sm:h-8 w-6 h-6"
+            alt="User"
+            className="md:w-12 md:h-12 sm:w-8 sm:h-8 w-6 h-6  cursor-pointer hover:scale-110"
           />
+
+          {/* Dropdown */}
           {showMenu && (
-            <div
-              className="relative inline-block  "
-              onMouseEnter={() => setShowMenu(true)}
-              onMouseLeave={() => setShowMenu(false)}
-            >
-              {/* Dropdown Menu */}
-              <div className="absolute mt-5 text-sm w-2/12  rounded-md  z-50 bg-black  text-white opacity-80">
-                <button
-                  onClick={() => {
-                    signOutUser();
-                  }}
-                  className="w-screen text-left px-4 py-2 hover:cursor-pointer "
-                >
-                  Sign Out
-                </button>
-              </div>
+            <div className="absolute top-14 right-0 bg-gray-800 text-white rounded-md opacity-90 z-50 w-36 ">
+              <button
+                onClick={signOutUser}
+                className="hover:cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-800"
+              >
+                Sign Out
+              </button>
             </div>
           )}
         </div>

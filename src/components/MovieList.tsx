@@ -31,13 +31,13 @@ export default function MovieList({ title, movies }: any) {
         <div className="flex space-x-2">
           <button
             onClick={scrollLeft}
-            className="p-1 bg-gray-700 rounded-full hidden sm:hidden md:flex hover:bg-gray-500"
+            className="p-1 bg-gray-700 rounded-full hidden sm:hidden md:flex hover:cursor-pointer hover:bg-gray-500"
           >
             <ChevronLeft />
           </button>
           <button
             onClick={scrollRight}
-            className="p-1 bg-gray-700 rounded-full hidden sm:hidden md:flex  hover:bg-gray-500"
+            className="p-1 bg-gray-700 rounded-full hidden sm:hidden md:flex hover:cursor-pointer  hover:bg-gray-500"
           >
             <ChevronRight />
           </button>
@@ -52,7 +52,7 @@ export default function MovieList({ title, movies }: any) {
         {movies.map((i: any) => (
           <img
             key={i.id}
-            className="p-2 rounded-2xl lg:w-1/7 md:w-1/5 sm:w-1/3 w-1/3"
+            className="p-2 rounded-2xl lg:w-1/7 md:w-1/5 sm:w-1/3 w-1/3 hover:scale-105 duration-300 hover:cursor-pointer"
             src={TMDB_IMG_CDN + i.poster_path}
             alt="movieTitle"
           />
