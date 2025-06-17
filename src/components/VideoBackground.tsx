@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { TMDB_API_OPTIONS } from "../utils/constants";
-import videoFilter from "../utils/videosFilter";
+import { useState } from "react";
 import randomItem from "../utils/random";
 import useVideoBackGround from "../hooks/useVideoBackGround";
 

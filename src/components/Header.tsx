@@ -5,12 +5,19 @@ import { addUser, removeUser } from "../store/slice/user";
 import { signOutUser } from "../utils/signin";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
+import { setLanguage, toggleGpt } from "../store/slice/feature";
+import { language } from "../utils/constants";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatchAction = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store: any) => store.user);
+  const feature = useSelector((store: any) => store.feature);
+
+  const handleGptClick = () => {
+    dispatchAction(toggleGpt());
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -46,29 +53,60 @@ const Header = () => {
         />
       </div>
       {user.accesstoken && (
-        <div
-          className="relative flex items-center"
-          onMouseEnter={() => setShowMenu(true)}
-          onMouseLeave={() => setShowMenu(false)}
-        >
-          {/* Avatar */}
-          <img
-            src="https://occ-0-2483-3647.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTfUlmnFRKf_OEUhru2aqso39FKxONTd5Dt_sWnNj5wAg4bbMBZ8sgZupTfnB9IQ8tmWcrzRiyZsCp1bLKb_n7VrnTw3_Ovw7Q.png?r=bd7"
-            alt="User"
-            className="md:w-12 md:h-12 sm:w-8 sm:h-8 w-6 h-6  cursor-pointer hover:scale-110"
-          />
-
-          {/* Dropdown */}
-          {showMenu && (
-            <div className="absolute top-14 right-0 bg-gray-800 text-white rounded-md opacity-90 z-50 w-36 ">
-              <button
-                onClick={signOutUser}
-                className="hover:cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-800"
+        <div className="flex space-x-6 align-middle items-center">
+          {feature.gptSearch && (
+            <div className="">
+              <select
+                name=""
+                id=""
+                className="text-white py-2 rounded-md bg-transparent"
+                onChange={(e) => dispatchAction(setLanguage(e.target.value))}
               >
-                Sign Out
-              </button>
+                {Object.keys(language).map((i: string) => (
+                  <option
+                    key={i}
+                    className="text-black bg-transparent"
+                    defaultValue={feature?.language}
+                    value={i}
+                  >
+                    {i}
+                  </option>
+                ))}
+              </select>
             </div>
           )}
+          <div>
+            <button
+              className="cursor-pointer py-2 px-4 rounded-lg bg-gradient-to-bl from-blue-900 to-red-500 text-white hover:scale-105 duration-300  shadow-md shadow-red-500/50 "
+              onClick={() => handleGptClick()}
+            >
+              AI Search
+            </button>
+          </div>
+          <div
+            className="relative flex items-center"
+            onMouseEnter={() => setShowMenu(true)}
+            onMouseLeave={() => setShowMenu(false)}
+          >
+            {/* Avatar */}
+            <img
+              src="https://occ-0-2483-3647.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTfUlmnFRKf_OEUhru2aqso39FKxONTd5Dt_sWnNj5wAg4bbMBZ8sgZupTfnB9IQ8tmWcrzRiyZsCp1bLKb_n7VrnTw3_Ovw7Q.png?r=bd7"
+              alt="User"
+              className="md:w-12 md:h-12 sm:w-8 sm:h-8 w-6 h-6  cursor-pointer duration-300 hover:scale-105"
+            />
+
+            {/* Dropdown */}
+            {showMenu && (
+              <div className="absolute top-14 right-0 bg-gray-800 text-white rounded-md opacity-90 z-50 w-36 ">
+                <button
+                  onClick={signOutUser}
+                  className="hover:cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-800"
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
