@@ -80,7 +80,7 @@ const Header = () => {
               className="cursor-pointer py-2 px-4 rounded-lg bg-gradient-to-bl from-blue-900 to-red-500 text-white hover:scale-105 duration-300  shadow-md shadow-red-500/50 "
               onClick={() => handleGptClick()}
             >
-              AI Search
+              {feature.gptSearch ? "Homepage" : "AI Search"}
             </button>
           </div>
           <div

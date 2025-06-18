@@ -1,24 +1,20 @@
-import { CircleX } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleGpt } from "../store/slice/feature";
 import { language } from "../utils/constants";
+import { useRef, useState } from "react";
+import Spinner from "./helper/Spinner";
+import { handleAiSearch } from "../utils/aiRecommendedMovies";
 const GptSearchBar = () => {
-  const dispatchAction = useDispatch();
-  const languageSelected: any = useSelector(
+  const queryAiValue = useRef<HTMLInputElement>(null);
+  const languageSelected = useSelector(
     (store: any) => store.feature.language
-  );
+  ) as keyof typeof language;
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>("");
+  const dispatchAction = useDispatch();
 
   return (
-    <div className="w-screen pt-[10%] space-y-5 ">
-      <div className="flex justify-center ">
-        <CircleX
-          size={40}
-          className="inline-block cursor-pointer hover:scale-105 duration-200 hover:rotate-90"
-          color="white"
-          onClick={() => dispatchAction(toggleGpt())}
-        />
-      </div>
-      <div className="flex justify-center">
+    <div>
+      <div className="flex justify-center w-screen pt-[10%]  ">
         <form
           className=" flex items-center z-50 w-1/2 bg-black space-x-4 py-4 px-6 "
           onSubmit={(e) => e.preventDefault()}
@@ -26,13 +22,34 @@ const GptSearchBar = () => {
           <input
             type="text"
             placeholder={language?.[languageSelected]?.placeholder}
-            className="rounded bg-amber-50 text-lg py-2 px-2 w-5/6"
+            className="rounded bg-amber-50 text-lg py-2 px-2 w-full"
+            ref={queryAiValue}
+            maxLength={100}
+            minLength={10}
+            required
           />
-          <button className="bg-red-700 text-white rounded py-2 px-6 text-lg cursor-pointer">
-            {language?.[languageSelected]?.search}
+          <button
+            className="bg-red-700 text-white  rounded py-2 px-6 text-lg cursor-pointer"
+            onClick={() => {
+              setLoading(true);
+              setError("");
+              handleAiSearch(
+                queryAiValue.current?.value,
+                dispatchAction,
+                setError,
+                setLoading
+              );
+            }}
+          >
+            {loading ? <Spinner /> : language?.[languageSelected]?.search}
           </button>
         </form>
       </div>
+      {
+        <div className="text-red-600 flex justify-center items-center align-middle w-screen -mt-1.5 ">
+          {error && <div className="w-1/2 bg-black text-md px-6">{error}</div>}
+        </div>
+      }
     </div>
   );
 };
