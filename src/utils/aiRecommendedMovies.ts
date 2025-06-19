@@ -10,8 +10,9 @@ const searchMovie = async (name: string) => {
     TMDB_API_OPTIONS
   );
   data = await data.json();
-  data = data?.results[0];
-  return data;
+  console.log("searchMovie",data);
+  
+  return data.results;
 };
 
 export const handleAiSearch = async (
@@ -35,7 +36,7 @@ export const handleAiSearch = async (
         let moviePromises = movies.map((movie) => searchMovie(movie));
 
         let movieResults = await Promise.all(moviePromises);
-        dispatchAction(addAiRecommended(movieResults));
+        dispatchAction(addAiRecommended({ movieNames: movies, movieResults }));
       } else {
         setError("No movie found, please improve the prompt.");
       }
