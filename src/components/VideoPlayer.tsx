@@ -8,8 +8,10 @@ const VideoPlayer = () => {
   if (!movies) return;
 
   let { original_title, overview, id } = movies[randomItem(20)];
+  // console.log(original_title,id);
+  
   return (
-    <div className="">
+    <div className="pt-2 md:pt-0">
       <VideoTitle title={original_title} overview={overview} movieId={id} />
       <VideoBackground movieId={id} />
     </div>

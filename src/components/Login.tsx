@@ -1,13 +1,11 @@
 import { Link, useNavigate } from "react-router";
 import Header from "./Header";
 import { signInValidate } from "../utils/validate";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { signInUser } from "../utils/signin";
 import Spinner from "./helper/Spinner";
-import { useDispatch, useSelector } from "react-redux";
-import { addUser, removeUser } from "../store/slice/user";
-import { onAuthStateChanged, onIdTokenChanged } from "firebase/auth";
-import { auth } from "../config/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../store/slice/user";
 
 export default function Login() {
   const email = useRef(null);

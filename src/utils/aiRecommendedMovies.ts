@@ -10,7 +10,7 @@ const searchMovie = async (name: string) => {
     TMDB_API_OPTIONS
   );
   data = await data.json();
-  console.log("searchMovie",data);
+  // console.log("searchMovie",data);
   
   return data.results;
 };

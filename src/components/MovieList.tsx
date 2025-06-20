@@ -22,7 +22,7 @@ export default function MovieList({ title, movies }: any) {
     <div className="w-screen px-5 relative">
       {/* Title Row with Arrows */}
       <div className="flex items-center justify-between">
-        <h1 className="items-center align-middle flex space-x-2 md:text-2xl sm:text-xl text-xl py-1">
+        <h1 className="items-center align-middle flex space-x-2 md:text-2xl  text-lg py-1">
           <span>{title}</span>
           <span>
             <ChevronRightIcon />

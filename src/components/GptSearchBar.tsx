@@ -3,6 +3,7 @@ import { language } from "../utils/constants";
 import { useRef, useState } from "react";
 import Spinner from "./helper/Spinner";
 import { handleAiSearch } from "../utils/aiRecommendedMovies";
+
 const GptSearchBar = () => {
   const queryAiValue = useRef<HTMLInputElement>(null);
   const languageSelected = useSelector(
@@ -14,22 +15,22 @@ const GptSearchBar = () => {
 
   return (
     <div>
-      <div className="flex justify-center w-screen pt-[10%]  ">
+      <div className="flex justify-center w-screen md:pt-[10%] pt-[40%] md:text-lg ">
         <form
-          className=" flex items-center z-50 w-1/2 bg-black space-x-4 py-4 px-6 "
+          className=" w-screen flex items-center z-50 md:w-1/2 bg-black space-x-4 py-4 px-6 "
           onSubmit={(e) => e.preventDefault()}
         >
           <input
             type="text"
             placeholder={language?.[languageSelected]?.placeholder}
-            className="rounded bg-amber-50 text-lg py-2 px-2 w-full"
+            className="rounded bg-amber-50   py-2 px-2 w-full"
             ref={queryAiValue}
             maxLength={100}
             minLength={10}
             required
           />
           <button
-            className="bg-red-700 text-white  rounded py-2 px-6 text-lg cursor-pointer"
+            className="bg-red-700 text-white  rounded py-2 px-6  cursor-pointer"
             onClick={() => {
               setLoading(true);
               setError("");
@@ -46,8 +47,8 @@ const GptSearchBar = () => {
         </form>
       </div>
       {
-        <div className="text-red-600 flex justify-center items-center align-middle w-screen -mt-1.5 ">
-          {error && <div className="w-1/2 bg-black text-md px-6">{error}</div>}
+        <div className="text-red-600 flex justify-center items-center align-middle w-screen -mt-1.5 " >
+          {error && <div className="w-screen md:w-1/2 bg-black text-md px-6">{error}</div>}
         </div>
       }
     </div>

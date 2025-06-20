@@ -6,7 +6,7 @@ const GptMovieSuggestion = () => {
     (store: any) => store.movies.aiRecommended
   );
   if (!aiRecommendedMovies) return <></>;
-  console.log(aiRecommendedMovies);
+  // console.log(aiRecommendedMovies);
 
   const { movieNames, movieResults } = aiRecommendedMovies;
   return (

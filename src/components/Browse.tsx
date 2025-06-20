@@ -10,15 +10,12 @@ import { useSelector } from "react-redux";
 
 const Browse = () => {
   const isgptSearchShow = useSelector((store: any) => store.feature.gptSearch);
-  const moviesList = useSelector((store: any) => store.movies);
 
-    useNowPlayingMovies();
-  // if (!moviesList.popularMovies) 
-    usePopularMovies();
-  // if (!moviesList.upcoming) 
-    useUpcomingMovies();
-  // if (!moviesList.topRated) 
-    useTopRatedMovies();
+  useNowPlayingMovies();
+  usePopularMovies();
+  useUpcomingMovies();
+  useTopRatedMovies();
+  
   return (
     <div className="">
       <Header />
