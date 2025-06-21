@@ -1,12 +1,10 @@
 import Login from "./Login";
 import Browse from "./Browse";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createHashRouter, RouterProvider } from "react-router";
 import Signup from "./Signup";
-import { useDispatch } from "react-redux";
 
 const Body = () => {
-  const dispatchAction = useDispatch();
-  const appRouter = createBrowserRouter([
+  const appRouter = createHashRouter([
     {
       path: "/browse",
       element: <Browse />,
@@ -23,7 +21,7 @@ const Body = () => {
 
   return (
     <div>
-      <RouterProvider router={appRouter} />
+      <RouterProvider router={appRouter}  />
     </div>
   );
 };

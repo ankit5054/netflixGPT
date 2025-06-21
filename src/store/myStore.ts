@@ -8,7 +8,7 @@ const NetflixGPTStore = configureStore({
     movies: movieReducer,
     feature: featureReducer,
   },
-  devTools: true,
+  devTools: false,
 });
 
 export default NetflixGPTStore;
