@@ -17189,17 +17189,13 @@ var _browseDefault = parcelHelpers.interopDefault(_browse);
 var _reactRouter = require("react-router");
 var _signup = require("./Signup");
 var _signupDefault = parcelHelpers.interopDefault(_signup);
-var _reactRedux = require("react-redux");
-var _s = $RefreshSig$();
 const Body = ()=>{
-    _s();
-    const dispatchAction = (0, _reactRedux.useDispatch)();
     const appRouter = (0, _reactRouter.createBrowserRouter)([
         {
             path: "/browse",
             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _browseDefault.default), {}, void 0, false, {
                 fileName: "src/components/Body.tsx",
-                lineNumber: 12,
+                lineNumber: 10,
                 columnNumber: 16
             }, undefined)
         },
@@ -17207,7 +17203,7 @@ const Body = ()=>{
             path: "/",
             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginDefault.default), {}, void 0, false, {
                 fileName: "src/components/Body.tsx",
-                lineNumber: 16,
+                lineNumber: 14,
                 columnNumber: 16
             }, undefined)
         },
@@ -17215,7 +17211,7 @@ const Body = ()=>{
             path: "/signup",
             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupDefault.default), {}, void 0, false, {
                 fileName: "src/components/Body.tsx",
-                lineNumber: 20,
+                lineNumber: 18,
                 columnNumber: 16
             }, undefined)
         }
@@ -17225,20 +17221,15 @@ const Body = ()=>{
             router: appRouter
         }, void 0, false, {
             fileName: "src/components/Body.tsx",
-            lineNumber: 26,
+            lineNumber: 24,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/Body.tsx",
-        lineNumber: 25,
+        lineNumber: 23,
         columnNumber: 5
     }, undefined);
 };
-_s(Body, "WrJFuSw3Fhv/zjg6Wd7T0ZpvVJk=", false, function() {
-    return [
-        (0, _reactRedux.useDispatch)
-    ];
-});
 _c = Body;
 exports.default = Body;
 var _c;
@@ -17249,7 +17240,7 @@ $RefreshReg$(_c, "Body");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","./Login":"9Osmo","./Browse":"b2oNy","react-router":"2jawN","./Signup":"j37dg","react-redux":"hbNxT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"9Osmo":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","./Login":"9Osmo","./Browse":"b2oNy","react-router":"2jawN","./Signup":"j37dg","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"9Osmo":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$7104 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$7104.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -31621,99 +31612,99 @@ parcelHelpers.exportAll(_auth, exports);
 },{"@firebase/auth":"kKV5D","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"kKV5D":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ActionCodeOperation", ()=>(0, _index8Bd0C73FJs.A));
-parcelHelpers.export(exports, "ActionCodeURL", ()=>(0, _index8Bd0C73FJs.aj));
-parcelHelpers.export(exports, "AuthCredential", ()=>(0, _index8Bd0C73FJs.M));
-parcelHelpers.export(exports, "AuthErrorCodes", ()=>(0, _index8Bd0C73FJs.J));
-parcelHelpers.export(exports, "EmailAuthCredential", ()=>(0, _index8Bd0C73FJs.N));
-parcelHelpers.export(exports, "EmailAuthProvider", ()=>(0, _index8Bd0C73FJs.W));
-parcelHelpers.export(exports, "FacebookAuthProvider", ()=>(0, _index8Bd0C73FJs.X));
-parcelHelpers.export(exports, "FactorId", ()=>(0, _index8Bd0C73FJs.F));
-parcelHelpers.export(exports, "GithubAuthProvider", ()=>(0, _index8Bd0C73FJs.Z));
-parcelHelpers.export(exports, "GoogleAuthProvider", ()=>(0, _index8Bd0C73FJs.Y));
-parcelHelpers.export(exports, "OAuthCredential", ()=>(0, _index8Bd0C73FJs.Q));
-parcelHelpers.export(exports, "OAuthProvider", ()=>(0, _index8Bd0C73FJs._));
-parcelHelpers.export(exports, "OperationType", ()=>(0, _index8Bd0C73FJs.O));
-parcelHelpers.export(exports, "PhoneAuthCredential", ()=>(0, _index8Bd0C73FJs.U));
-parcelHelpers.export(exports, "PhoneAuthProvider", ()=>(0, _index8Bd0C73FJs.P));
-parcelHelpers.export(exports, "PhoneMultiFactorGenerator", ()=>(0, _index8Bd0C73FJs.n));
-parcelHelpers.export(exports, "ProviderId", ()=>(0, _index8Bd0C73FJs.q));
-parcelHelpers.export(exports, "RecaptchaVerifier", ()=>(0, _index8Bd0C73FJs.R));
-parcelHelpers.export(exports, "SAMLAuthProvider", ()=>(0, _index8Bd0C73FJs.$));
-parcelHelpers.export(exports, "SignInMethod", ()=>(0, _index8Bd0C73FJs.S));
-parcelHelpers.export(exports, "TotpMultiFactorGenerator", ()=>(0, _index8Bd0C73FJs.T));
-parcelHelpers.export(exports, "TotpSecret", ()=>(0, _index8Bd0C73FJs.o));
-parcelHelpers.export(exports, "TwitterAuthProvider", ()=>(0, _index8Bd0C73FJs.a0));
-parcelHelpers.export(exports, "applyActionCode", ()=>(0, _index8Bd0C73FJs.a8));
-parcelHelpers.export(exports, "beforeAuthStateChanged", ()=>(0, _index8Bd0C73FJs.y));
-parcelHelpers.export(exports, "browserCookiePersistence", ()=>(0, _index8Bd0C73FJs.a));
-parcelHelpers.export(exports, "browserLocalPersistence", ()=>(0, _index8Bd0C73FJs.b));
-parcelHelpers.export(exports, "browserPopupRedirectResolver", ()=>(0, _index8Bd0C73FJs.m));
-parcelHelpers.export(exports, "browserSessionPersistence", ()=>(0, _index8Bd0C73FJs.c));
-parcelHelpers.export(exports, "checkActionCode", ()=>(0, _index8Bd0C73FJs.a9));
-parcelHelpers.export(exports, "confirmPasswordReset", ()=>(0, _index8Bd0C73FJs.a7));
-parcelHelpers.export(exports, "connectAuthEmulator", ()=>(0, _index8Bd0C73FJs.L));
-parcelHelpers.export(exports, "createUserWithEmailAndPassword", ()=>(0, _index8Bd0C73FJs.ab));
-parcelHelpers.export(exports, "debugErrorMap", ()=>(0, _index8Bd0C73FJs.H));
-parcelHelpers.export(exports, "deleteUser", ()=>(0, _index8Bd0C73FJs.G));
-parcelHelpers.export(exports, "fetchSignInMethodsForEmail", ()=>(0, _index8Bd0C73FJs.ag));
-parcelHelpers.export(exports, "getAdditionalUserInfo", ()=>(0, _index8Bd0C73FJs.ar));
-parcelHelpers.export(exports, "getAuth", ()=>(0, _index8Bd0C73FJs.p));
-parcelHelpers.export(exports, "getIdToken", ()=>(0, _index8Bd0C73FJs.ao));
-parcelHelpers.export(exports, "getIdTokenResult", ()=>(0, _index8Bd0C73FJs.ap));
-parcelHelpers.export(exports, "getMultiFactorResolver", ()=>(0, _index8Bd0C73FJs.at));
-parcelHelpers.export(exports, "getRedirectResult", ()=>(0, _index8Bd0C73FJs.k));
-parcelHelpers.export(exports, "inMemoryPersistence", ()=>(0, _index8Bd0C73FJs.V));
-parcelHelpers.export(exports, "indexedDBLocalPersistence", ()=>(0, _index8Bd0C73FJs.i));
-parcelHelpers.export(exports, "initializeAuth", ()=>(0, _index8Bd0C73FJs.K));
-parcelHelpers.export(exports, "initializeRecaptchaConfig", ()=>(0, _index8Bd0C73FJs.v));
-parcelHelpers.export(exports, "isSignInWithEmailLink", ()=>(0, _index8Bd0C73FJs.ae));
-parcelHelpers.export(exports, "linkWithCredential", ()=>(0, _index8Bd0C73FJs.a3));
-parcelHelpers.export(exports, "linkWithPhoneNumber", ()=>(0, _index8Bd0C73FJs.l));
-parcelHelpers.export(exports, "linkWithPopup", ()=>(0, _index8Bd0C73FJs.e));
-parcelHelpers.export(exports, "linkWithRedirect", ()=>(0, _index8Bd0C73FJs.h));
-parcelHelpers.export(exports, "multiFactor", ()=>(0, _index8Bd0C73FJs.au));
-parcelHelpers.export(exports, "onAuthStateChanged", ()=>(0, _index8Bd0C73FJs.z));
-parcelHelpers.export(exports, "onIdTokenChanged", ()=>(0, _index8Bd0C73FJs.x));
-parcelHelpers.export(exports, "parseActionCodeURL", ()=>(0, _index8Bd0C73FJs.ak));
-parcelHelpers.export(exports, "prodErrorMap", ()=>(0, _index8Bd0C73FJs.I));
-parcelHelpers.export(exports, "reauthenticateWithCredential", ()=>(0, _index8Bd0C73FJs.a4));
-parcelHelpers.export(exports, "reauthenticateWithPhoneNumber", ()=>(0, _index8Bd0C73FJs.r));
-parcelHelpers.export(exports, "reauthenticateWithPopup", ()=>(0, _index8Bd0C73FJs.f));
-parcelHelpers.export(exports, "reauthenticateWithRedirect", ()=>(0, _index8Bd0C73FJs.j));
-parcelHelpers.export(exports, "reload", ()=>(0, _index8Bd0C73FJs.as));
-parcelHelpers.export(exports, "revokeAccessToken", ()=>(0, _index8Bd0C73FJs.E));
-parcelHelpers.export(exports, "sendEmailVerification", ()=>(0, _index8Bd0C73FJs.ah));
-parcelHelpers.export(exports, "sendPasswordResetEmail", ()=>(0, _index8Bd0C73FJs.a6));
-parcelHelpers.export(exports, "sendSignInLinkToEmail", ()=>(0, _index8Bd0C73FJs.ad));
-parcelHelpers.export(exports, "setPersistence", ()=>(0, _index8Bd0C73FJs.t));
-parcelHelpers.export(exports, "signInAnonymously", ()=>(0, _index8Bd0C73FJs.a1));
-parcelHelpers.export(exports, "signInWithCredential", ()=>(0, _index8Bd0C73FJs.a2));
-parcelHelpers.export(exports, "signInWithCustomToken", ()=>(0, _index8Bd0C73FJs.a5));
-parcelHelpers.export(exports, "signInWithEmailAndPassword", ()=>(0, _index8Bd0C73FJs.ac));
-parcelHelpers.export(exports, "signInWithEmailLink", ()=>(0, _index8Bd0C73FJs.af));
-parcelHelpers.export(exports, "signInWithPhoneNumber", ()=>(0, _index8Bd0C73FJs.s));
-parcelHelpers.export(exports, "signInWithPopup", ()=>(0, _index8Bd0C73FJs.d));
-parcelHelpers.export(exports, "signInWithRedirect", ()=>(0, _index8Bd0C73FJs.g));
-parcelHelpers.export(exports, "signOut", ()=>(0, _index8Bd0C73FJs.D));
-parcelHelpers.export(exports, "unlink", ()=>(0, _index8Bd0C73FJs.aq));
-parcelHelpers.export(exports, "updateCurrentUser", ()=>(0, _index8Bd0C73FJs.C));
-parcelHelpers.export(exports, "updateEmail", ()=>(0, _index8Bd0C73FJs.am));
-parcelHelpers.export(exports, "updatePassword", ()=>(0, _index8Bd0C73FJs.an));
-parcelHelpers.export(exports, "updatePhoneNumber", ()=>(0, _index8Bd0C73FJs.u));
-parcelHelpers.export(exports, "updateProfile", ()=>(0, _index8Bd0C73FJs.al));
-parcelHelpers.export(exports, "useDeviceLanguage", ()=>(0, _index8Bd0C73FJs.B));
-parcelHelpers.export(exports, "validatePassword", ()=>(0, _index8Bd0C73FJs.w));
-parcelHelpers.export(exports, "verifyBeforeUpdateEmail", ()=>(0, _index8Bd0C73FJs.ai));
-parcelHelpers.export(exports, "verifyPasswordResetCode", ()=>(0, _index8Bd0C73FJs.aa));
-var _index8Bd0C73FJs = require("./index-8bd0c73f.js");
+parcelHelpers.export(exports, "ActionCodeOperation", ()=>(0, _index8E6E89CbJs.A));
+parcelHelpers.export(exports, "ActionCodeURL", ()=>(0, _index8E6E89CbJs.aj));
+parcelHelpers.export(exports, "AuthCredential", ()=>(0, _index8E6E89CbJs.M));
+parcelHelpers.export(exports, "AuthErrorCodes", ()=>(0, _index8E6E89CbJs.J));
+parcelHelpers.export(exports, "EmailAuthCredential", ()=>(0, _index8E6E89CbJs.N));
+parcelHelpers.export(exports, "EmailAuthProvider", ()=>(0, _index8E6E89CbJs.W));
+parcelHelpers.export(exports, "FacebookAuthProvider", ()=>(0, _index8E6E89CbJs.X));
+parcelHelpers.export(exports, "FactorId", ()=>(0, _index8E6E89CbJs.F));
+parcelHelpers.export(exports, "GithubAuthProvider", ()=>(0, _index8E6E89CbJs.Z));
+parcelHelpers.export(exports, "GoogleAuthProvider", ()=>(0, _index8E6E89CbJs.Y));
+parcelHelpers.export(exports, "OAuthCredential", ()=>(0, _index8E6E89CbJs.Q));
+parcelHelpers.export(exports, "OAuthProvider", ()=>(0, _index8E6E89CbJs._));
+parcelHelpers.export(exports, "OperationType", ()=>(0, _index8E6E89CbJs.O));
+parcelHelpers.export(exports, "PhoneAuthCredential", ()=>(0, _index8E6E89CbJs.U));
+parcelHelpers.export(exports, "PhoneAuthProvider", ()=>(0, _index8E6E89CbJs.P));
+parcelHelpers.export(exports, "PhoneMultiFactorGenerator", ()=>(0, _index8E6E89CbJs.n));
+parcelHelpers.export(exports, "ProviderId", ()=>(0, _index8E6E89CbJs.q));
+parcelHelpers.export(exports, "RecaptchaVerifier", ()=>(0, _index8E6E89CbJs.R));
+parcelHelpers.export(exports, "SAMLAuthProvider", ()=>(0, _index8E6E89CbJs.$));
+parcelHelpers.export(exports, "SignInMethod", ()=>(0, _index8E6E89CbJs.S));
+parcelHelpers.export(exports, "TotpMultiFactorGenerator", ()=>(0, _index8E6E89CbJs.T));
+parcelHelpers.export(exports, "TotpSecret", ()=>(0, _index8E6E89CbJs.o));
+parcelHelpers.export(exports, "TwitterAuthProvider", ()=>(0, _index8E6E89CbJs.a0));
+parcelHelpers.export(exports, "applyActionCode", ()=>(0, _index8E6E89CbJs.a8));
+parcelHelpers.export(exports, "beforeAuthStateChanged", ()=>(0, _index8E6E89CbJs.y));
+parcelHelpers.export(exports, "browserCookiePersistence", ()=>(0, _index8E6E89CbJs.a));
+parcelHelpers.export(exports, "browserLocalPersistence", ()=>(0, _index8E6E89CbJs.b));
+parcelHelpers.export(exports, "browserPopupRedirectResolver", ()=>(0, _index8E6E89CbJs.m));
+parcelHelpers.export(exports, "browserSessionPersistence", ()=>(0, _index8E6E89CbJs.c));
+parcelHelpers.export(exports, "checkActionCode", ()=>(0, _index8E6E89CbJs.a9));
+parcelHelpers.export(exports, "confirmPasswordReset", ()=>(0, _index8E6E89CbJs.a7));
+parcelHelpers.export(exports, "connectAuthEmulator", ()=>(0, _index8E6E89CbJs.L));
+parcelHelpers.export(exports, "createUserWithEmailAndPassword", ()=>(0, _index8E6E89CbJs.ab));
+parcelHelpers.export(exports, "debugErrorMap", ()=>(0, _index8E6E89CbJs.H));
+parcelHelpers.export(exports, "deleteUser", ()=>(0, _index8E6E89CbJs.G));
+parcelHelpers.export(exports, "fetchSignInMethodsForEmail", ()=>(0, _index8E6E89CbJs.ag));
+parcelHelpers.export(exports, "getAdditionalUserInfo", ()=>(0, _index8E6E89CbJs.ar));
+parcelHelpers.export(exports, "getAuth", ()=>(0, _index8E6E89CbJs.p));
+parcelHelpers.export(exports, "getIdToken", ()=>(0, _index8E6E89CbJs.ao));
+parcelHelpers.export(exports, "getIdTokenResult", ()=>(0, _index8E6E89CbJs.ap));
+parcelHelpers.export(exports, "getMultiFactorResolver", ()=>(0, _index8E6E89CbJs.at));
+parcelHelpers.export(exports, "getRedirectResult", ()=>(0, _index8E6E89CbJs.k));
+parcelHelpers.export(exports, "inMemoryPersistence", ()=>(0, _index8E6E89CbJs.V));
+parcelHelpers.export(exports, "indexedDBLocalPersistence", ()=>(0, _index8E6E89CbJs.i));
+parcelHelpers.export(exports, "initializeAuth", ()=>(0, _index8E6E89CbJs.K));
+parcelHelpers.export(exports, "initializeRecaptchaConfig", ()=>(0, _index8E6E89CbJs.v));
+parcelHelpers.export(exports, "isSignInWithEmailLink", ()=>(0, _index8E6E89CbJs.ae));
+parcelHelpers.export(exports, "linkWithCredential", ()=>(0, _index8E6E89CbJs.a3));
+parcelHelpers.export(exports, "linkWithPhoneNumber", ()=>(0, _index8E6E89CbJs.l));
+parcelHelpers.export(exports, "linkWithPopup", ()=>(0, _index8E6E89CbJs.e));
+parcelHelpers.export(exports, "linkWithRedirect", ()=>(0, _index8E6E89CbJs.h));
+parcelHelpers.export(exports, "multiFactor", ()=>(0, _index8E6E89CbJs.au));
+parcelHelpers.export(exports, "onAuthStateChanged", ()=>(0, _index8E6E89CbJs.z));
+parcelHelpers.export(exports, "onIdTokenChanged", ()=>(0, _index8E6E89CbJs.x));
+parcelHelpers.export(exports, "parseActionCodeURL", ()=>(0, _index8E6E89CbJs.ak));
+parcelHelpers.export(exports, "prodErrorMap", ()=>(0, _index8E6E89CbJs.I));
+parcelHelpers.export(exports, "reauthenticateWithCredential", ()=>(0, _index8E6E89CbJs.a4));
+parcelHelpers.export(exports, "reauthenticateWithPhoneNumber", ()=>(0, _index8E6E89CbJs.r));
+parcelHelpers.export(exports, "reauthenticateWithPopup", ()=>(0, _index8E6E89CbJs.f));
+parcelHelpers.export(exports, "reauthenticateWithRedirect", ()=>(0, _index8E6E89CbJs.j));
+parcelHelpers.export(exports, "reload", ()=>(0, _index8E6E89CbJs.as));
+parcelHelpers.export(exports, "revokeAccessToken", ()=>(0, _index8E6E89CbJs.E));
+parcelHelpers.export(exports, "sendEmailVerification", ()=>(0, _index8E6E89CbJs.ah));
+parcelHelpers.export(exports, "sendPasswordResetEmail", ()=>(0, _index8E6E89CbJs.a6));
+parcelHelpers.export(exports, "sendSignInLinkToEmail", ()=>(0, _index8E6E89CbJs.ad));
+parcelHelpers.export(exports, "setPersistence", ()=>(0, _index8E6E89CbJs.t));
+parcelHelpers.export(exports, "signInAnonymously", ()=>(0, _index8E6E89CbJs.a1));
+parcelHelpers.export(exports, "signInWithCredential", ()=>(0, _index8E6E89CbJs.a2));
+parcelHelpers.export(exports, "signInWithCustomToken", ()=>(0, _index8E6E89CbJs.a5));
+parcelHelpers.export(exports, "signInWithEmailAndPassword", ()=>(0, _index8E6E89CbJs.ac));
+parcelHelpers.export(exports, "signInWithEmailLink", ()=>(0, _index8E6E89CbJs.af));
+parcelHelpers.export(exports, "signInWithPhoneNumber", ()=>(0, _index8E6E89CbJs.s));
+parcelHelpers.export(exports, "signInWithPopup", ()=>(0, _index8E6E89CbJs.d));
+parcelHelpers.export(exports, "signInWithRedirect", ()=>(0, _index8E6E89CbJs.g));
+parcelHelpers.export(exports, "signOut", ()=>(0, _index8E6E89CbJs.D));
+parcelHelpers.export(exports, "unlink", ()=>(0, _index8E6E89CbJs.aq));
+parcelHelpers.export(exports, "updateCurrentUser", ()=>(0, _index8E6E89CbJs.C));
+parcelHelpers.export(exports, "updateEmail", ()=>(0, _index8E6E89CbJs.am));
+parcelHelpers.export(exports, "updatePassword", ()=>(0, _index8E6E89CbJs.an));
+parcelHelpers.export(exports, "updatePhoneNumber", ()=>(0, _index8E6E89CbJs.u));
+parcelHelpers.export(exports, "updateProfile", ()=>(0, _index8E6E89CbJs.al));
+parcelHelpers.export(exports, "useDeviceLanguage", ()=>(0, _index8E6E89CbJs.B));
+parcelHelpers.export(exports, "validatePassword", ()=>(0, _index8E6E89CbJs.w));
+parcelHelpers.export(exports, "verifyBeforeUpdateEmail", ()=>(0, _index8E6E89CbJs.ai));
+parcelHelpers.export(exports, "verifyPasswordResetCode", ()=>(0, _index8E6E89CbJs.aa));
+var _index8E6E89CbJs = require("./index-8e6e89cb.js");
 var _app = require("@firebase/app");
 var _util = require("@firebase/util");
 var _logger = require("@firebase/logger");
 var _tslib = require("tslib");
 var _component = require("@firebase/component");
 
-},{"./index-8bd0c73f.js":"56qy1","@firebase/app":"hLmie","@firebase/util":"5D2HR","@firebase/logger":"cPhqm","tslib":"iC1Dx","@firebase/component":"llS6a","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"56qy1":[function(require,module,exports,__globalThis) {
+},{"./index-8e6e89cb.js":"io37X","@firebase/app":"hLmie","@firebase/util":"5D2HR","@firebase/logger":"cPhqm","tslib":"iC1Dx","@firebase/component":"llS6a","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"io37X":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "$", ()=>SAMLAuthProvider);
@@ -33146,11 +33137,13 @@ function extractProviderData(providers) {
         const url = await _getFinalTarget(auth, tokenApiHost, "/v1/token" /* Endpoint.TOKEN */ , `key=${apiKey}`);
         const headers = await auth._getAdditionalHeaders();
         headers["Content-Type" /* HttpHeader.CONTENT_TYPE */ ] = 'application/x-www-form-urlencoded';
-        return FetchProvider.fetch()(url, {
+        const options = {
             method: "POST" /* HttpMethod.POST */ ,
             headers,
             body
-        });
+        };
+        if (auth.emulatorConfig && (0, _util.isCloudWorkstation)(auth.emulatorConfig.host)) options.credentials = 'include';
+        return FetchProvider.fetch()(url, options);
     });
     // The response comes back in snake_case. Convert to camel:
     return {
@@ -41287,7 +41280,7 @@ class TotpMultiFactorAssertionImpl extends MultiFactorAssertionImpl {
     return typeof input === 'undefined' || (input === null || input === void 0 ? void 0 : input.length) === 0;
 }
 var name = "@firebase/auth";
-var version = "1.10.6";
+var version = "1.10.7";
 /**
  * @license
  * Copyright 2020 Google LLC
@@ -45878,7 +45871,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _app = require("@firebase/app");
 parcelHelpers.exportAll(_app, exports);
 var name = "firebase";
-var version = "11.9.0";
+var version = "11.9.1";
 /**
  * @license
  * Copyright 2020 Google LLC
